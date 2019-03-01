@@ -59,6 +59,7 @@ public class SqliteDatabase extends SQLiteOpenHelper implements Database {
 				copyDatabase();
 			}
 			catch (IOException e) {
+				Log.e(Constants.LOG_TAG, "error: ", e);
 				throw new Error("Error on setup application. Can't install database. " +
 						"Please, try to start it again");
 			}
@@ -100,7 +101,8 @@ public class SqliteDatabase extends SQLiteOpenHelper implements Database {
 
 	private void copyDatabase() throws IOException {
 		InputStream is = context.getAssets().open(DB_NAME);
-		OutputStream os = new FileOutputStream(DB_PATH);
+		context.openFileOutput(DB_NAME, Context.MODE_PRIVATE);
+		OutputStream os = new FileOutputStream(context.getFileStreamPath(DB_NAME));
 		byte[] buffer = new byte[1024];
 		int length;
 		while ((length = is.read(buffer)) > 0) {
@@ -111,7 +113,7 @@ public class SqliteDatabase extends SQLiteOpenHelper implements Database {
 	}
 
 	private SQLiteDatabase openDatabase() {
-		return SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READONLY);
+		return SQLiteDatabase.openDatabase(context.getFileStreamPath(DB_NAME).getAbsolutePath(), null, SQLiteDatabase.OPEN_READONLY);
 	}
 
 	@Override

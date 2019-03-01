@@ -15,13 +15,18 @@ repositories {
     jcenter()
 }
 
+dependencies {
+    implementation 'com.android.support:support-fragment:26.1.0'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.7'
+}
+
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
 
     defaultConfig {
         applicationId "org.forzaverita.verbs"
         minSdkVersion 19
-        targetSdkVersion 27
+        targetSdkVersion 26
         versionCode 8
         versionName "1.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

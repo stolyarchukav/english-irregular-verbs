@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import org.forzaverita.iverbs.advert.AdUtils;
 import org.forzaverita.iverbs.data.Constants;
 import org.forzaverita.iverbs.learn.LearnActivity;
 import org.forzaverita.iverbs.preference.AppPreferenceActivity;
@@ -60,8 +59,6 @@ public abstract class BaseActivity extends FragmentActivity implements OnInitLis
 		}
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-        AdUtils.loadAd(this);
 	}
 	
 	protected void onDestroy() {
