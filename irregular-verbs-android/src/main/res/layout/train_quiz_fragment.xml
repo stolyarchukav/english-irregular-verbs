@@ -92,12 +92,13 @@
         </LinearLayout>
     </ScrollView>
 
-    <TextView
+    <Button
         style="@style/HintText"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="22dp"
+        android:paddingBottom="2dp"
+        android:textSize="14sp"
         android:text="@string/tran_select_verbs"
-        android:clickable="true"
         android:onClick="onCLickSelectVerbsToTrain"/>
 
 </LinearLayout>

@@ -57,9 +57,10 @@
     <Button
         style="@style/HintText"
         android:layout_width="fill_parent"
-        android:layout_height="20dp"
+        android:layout_height="22dp"
+        android:paddingBottom="2dp"
         android:onClick="onClickRateApp"
         android:text="@string/rate_app_short"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
 
 </LinearLayout>

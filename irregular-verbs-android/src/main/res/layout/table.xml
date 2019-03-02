@@ -55,12 +55,14 @@
         </TableLayout>
     </ScrollView>
 
-    <TextView android:id="@+id/table_set_transcription"
+    <Button
+        style="@style/HintText"
+        android:id="@+id/table_set_transcription"
         android:text="@string/table_show_transcription"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:onClick="onCLickShowTranscription"
-        style="@style/HintText" />
+        android:layout_height="22dp"
+        android:paddingBottom="2dp"
+        android:textSize="14sp"
+        android:onClick="onCLickShowTranscription" />
 
 </LinearLayout>

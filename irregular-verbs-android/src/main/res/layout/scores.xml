@@ -80,9 +80,10 @@
     <Button
         style="@style/HintText"
         android:layout_width="fill_parent"
-        android:layout_height="20dp"
+        android:layout_height="22dp"
+        android:paddingBottom="2dp"
+        android:textSize="14sp"
         android:onClick="onClickReset"
-        android:text="@string/scores_reset"
-        android:textSize="12sp" />
+        android:text="@string/scores_reset"/>
 
 </LinearLayout>

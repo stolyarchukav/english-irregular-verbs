@@ -1,10 +1,12 @@
 package org.forzaverita.iverbs;
 
 import android.app.ProgressDialog;
+import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -143,14 +145,14 @@ public class TableActivity extends BaseActivity implements SortableTable<Verb> {
     }
 
     public void onCLickShowTranscription(View view) {
-        final TextView textView = (TextView) view;
+        final Button button = (Button) view;
         transcriptionVisible ^= true;
         if (transcriptionVisible) {
-            textView.setText(getString(R.string.table_hide_transcription));
+            button.setText(getString(R.string.table_hide_transcription));
+        } else {
+            button.setText(getString(R.string.table_show_transcription));
         }
-        else {
-            textView.setText(getString(R.string.table_show_transcription));
-        }
+        button.setPaintFlags(button.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         loadTable();
     }
 
