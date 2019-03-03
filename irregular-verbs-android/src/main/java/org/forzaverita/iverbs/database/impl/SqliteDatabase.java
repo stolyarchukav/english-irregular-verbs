@@ -170,9 +170,11 @@ public class SqliteDatabase extends SQLiteOpenHelper implements Database {
             	verb.setForm2(cursor.getString(2));
             	verb.setForm3(cursor.getString(3));
             	verb.setTranslation(cursor.getString(4));
-                verb.setForm1Transcription(cursor.getString(5));
-                verb.setForm2Transcription(cursor.getString(6));
-                verb.setForm3Transcription(cursor.getString(7));
+            	if (cursor.getColumnCount() > 5) {
+					verb.setForm1Transcription(cursor.getString(5));
+					verb.setForm2Transcription(cursor.getString(6));
+					verb.setForm3Transcription(cursor.getString(7));
+				}
             	verbs.add(verb);
             } while (cursor.moveToNext());
         }
