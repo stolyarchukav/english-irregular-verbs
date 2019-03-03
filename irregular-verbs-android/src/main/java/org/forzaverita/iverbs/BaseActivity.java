@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.NavUtils;
-import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -57,8 +55,6 @@ public abstract class BaseActivity extends FragmentActivity implements OnInitLis
 		if (! service.isLanguagePrefered()) {
 			startActivity(new Intent(this, SelectLangDialog.class));
 		}
-        ActionBar actionBar = getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 	
 	protected void onDestroy() {
@@ -71,6 +67,13 @@ public abstract class BaseActivity extends FragmentActivity implements OnInitLis
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+		ActionBar ab = getActionBar();
+		if (ab != null) {
+			ab.setHomeButtonEnabled(true);
+			ab.setDisplayHomeAsUpEnabled(true);
+			ab.setTitle(getTitle());
+			ab.show();
+		}
 		getMenuInflater().inflate(R.menu.main, menu);
         return true;
 	}
@@ -103,17 +106,8 @@ public abstract class BaseActivity extends FragmentActivity implements OnInitLis
                 moreApps();
                 break;
             case android.R.id.home:
-                Intent upIntent = NavUtils.getParentActivityIntent(this);
-                if (upIntent != null) {
-                    if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
-                        TaskStackBuilder.create(this)
-                                .addNextIntentWithParentStack(upIntent)
-                                .startActivities();
-                    } else {
-                        NavUtils.navigateUpTo(this, upIntent);
-                    }
-                }
-                break;
+				startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+				break;
 		}
 		return true;
 	}

@@ -1,6 +1,7 @@
 package org.forzaverita.iverbs;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 public class MainActivity extends BaseActivity {
 
@@ -8,7 +9,12 @@ public class MainActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        getActionBar().setDisplayHomeAsUpEnabled(false);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
 }
