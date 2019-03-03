@@ -18,17 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <meta-data android:name="android.app.default_searchable"
-                   android:value=".SearchActivity" />
+                   android:value="org.forzaverita.iverbs.SearchActivity" />
         </activity>
         <activity
             android:name=".InfoActivity"
             android:label="@string/title_activity_info">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-            <meta-data
-                android:name="android.app.default_searchable"
-                android:value=".SearchActivity" />
+            <meta-data android:name="android.app.default_searchable"
+                android:value="org.forzaverita.iverbs.SearchActivity" />
         </activity>
         <activity
             android:name=".SearchActivity"
@@ -37,50 +33,32 @@
 				<action android:name="android.intent.action.SEARCH" />
 			</intent-filter>
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-			<meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
 		</activity>
         <activity
             android:name=".TableActivity"
             android:label="@string/title_activity_table" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        	<meta-data android:name="android.app.default_searchable"
-                android:value=".SearchActivity" />
+            <meta-data android:name="android.app.default_searchable"
+                android:value="org.forzaverita.iverbs.SearchActivity" />
         </activity>	
         <activity
             android:name=".learn.LearnActivity"
             android:label="@string/title_activity_learn" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        	<meta-data
-                android:name="android.app.default_searchable"
-                android:value=".SearchActivity" />
+            <meta-data android:name="android.app.default_searchable"
+                android:value="org.forzaverita.iverbs.SearchActivity" />
        	</activity>
         <activity
             android:name=".train.TrainActivity"
             android:label="@string/title_activity_train">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        	<meta-data
-                android:name="android.app.default_searchable"
-                android:value=".SearchActivity" />
+            <meta-data android:name="android.app.default_searchable"
+                android:value="org.forzaverita.iverbs.SearchActivity" />
        	</activity>
         <activity
             android:name=".ScoresActivity"
             android:label="@string/title_activity_scores" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        	<meta-data
-                android:name="android.app.default_searchable"
-                android:value=".SearchActivity" />
+            <meta-data android:name="android.app.default_searchable"
+                android:value="org.forzaverita.iverbs.SearchActivity" />
         </activity>
         
         <activity android:name=".preference.AppPreferenceActivity"
