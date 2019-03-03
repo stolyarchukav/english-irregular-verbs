@@ -24,7 +24,7 @@ android {
     compileSdkVersion 26
 
     defaultConfig {
-        applicationId "org.forzaverita.verbs"
+        applicationId "org.forzaverita.iverbs"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 9
